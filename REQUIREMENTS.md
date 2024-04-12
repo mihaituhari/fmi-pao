@@ -3,8 +3,9 @@
 2. ✅ Cel puțin într-o clasă se vor rescrie metode din clasa Object
 - ModelPersoana.toString()
 
-3. ❌ Se vor utiliza cel puțin două colecții diferite capabile să gestioneze 
+3. ✅ Se vor utiliza cel puțin două colecții diferite capabile să gestioneze 
 obiectele definite anterior, iar cel puțin una trebuie să fie sortată
+- `Disciplina` implementeaza `Comparable` si folosim `TreeSet` in `ServiciuCatalog`
 
 4. ✅ Se va utiliza moștenirea pentru crearea de clase specializate
 - `ModelBaza` & `ModelPersoana` sunt extinse
