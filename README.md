@@ -1,2 +1,2 @@
 # fmi-pao
-FMI PAO project
+FMI PAO project / Catalog
