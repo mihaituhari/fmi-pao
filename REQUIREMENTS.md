@@ -11,7 +11,7 @@ obiectele definite anterior, iar cel puțin una trebuie să fie sortată
 - `ModelBaza` & `ModelPersoana` sunt extinse
 
 5. ✅ Cel puțin într-o clasă se va utiliza agregarea sau compoziția
-- In clasa Facultate se foloseste agregarea pentru a avea o lista de discipline si studenti
+- In clasa `Facultate` se foloseste agregarea pentru a avea o lista de discipline si studenti
 
 6. ❌ Se va implementa un serviciu de autentificare
 
