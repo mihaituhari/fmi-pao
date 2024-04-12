@@ -10,6 +10,7 @@ public class TestAplicatie {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            System.out.println();
             System.out.println("👨‍🎓 ⎯ STUDENTI ⎯");
             System.out.println("1. Listare | 2. Adăugare | 3. Actualizare | 4. Ștergere");
             System.out.println();
