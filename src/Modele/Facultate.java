@@ -31,7 +31,7 @@ public class Facultate extends ModelBaza {
         this.discipline = discipline;
     }
 
-    // Methods for adding and removing students and disciplines
+    // Metode de adăugare și ștergere a studenților și disciplinelor
     public void adaugaStudent(Student student) {
         this.studenti.add(student);
     }

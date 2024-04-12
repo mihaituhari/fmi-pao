@@ -23,7 +23,9 @@ pot fi efectuate de aplicație
 unui meniu de tip text (se poate utiliza și o interfață grafică)
 - `ServiciuCatalog`
  
-9. ❌ Se va asigura persistența datelor utilizând o bază de date relațională și JDBC
+9. 🚧 Se va asigura persistența datelor utilizând o bază de date relațională și JDBC
+- WIP for Students (update/delete)
+- Add disciplina
 
 10. ✅ Se vor realiza servicii care sa expună operații de tip CRUD (Create, Read, Update și Delete)
 pentru cel puțin una dintre clasele utilizate

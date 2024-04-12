@@ -1,5 +1,6 @@
 package Servicii;
 
+import DAO.StudentDAO;
 import Modele.Disciplina;
 import Modele.Student;
 
@@ -11,8 +12,12 @@ public class ServiciuCatalog {
     private List<Student> studenti;
     private TreeSet<Disciplina> discipline;
 
+    private StudentDAO studentDAO;
+
     public ServiciuCatalog() {
-        this.studenti = new ArrayList<>();
+        this.studentDAO = new StudentDAO();
+
+        this.studenti = studentDAO.lista();
         this.discipline = new TreeSet<>();
     }
 
@@ -30,6 +35,7 @@ public class ServiciuCatalog {
 
     public void adaugaStudent(Student student) {
         ServiciuLogging.logAction("adaugaStudent");
+        studentDAO.adauga(student);
         studenti.add(student);
     }
 

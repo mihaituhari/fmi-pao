@@ -9,6 +9,8 @@ public class TestAplicatie {
         ServiciuCatalog serviciuCatalog = new ServiciuCatalog();
         Scanner scanner = new Scanner(System.in);
 
+        testConexiune();
+
         while (true) {
             System.out.println();
             System.out.println("👨‍🎓 ⎯ STUDENTI ⎯");
@@ -72,7 +74,13 @@ public class TestAplicatie {
         System.out.print("Introduceți numele studentului: ");
         String numeStudent = scanner.next();
 
-        Student student = new Student(idStudent, numeStudent, prenumeStudent);
+        System.out.print("Introduceți emailul studentului: ");
+        String emailStudent = scanner.next();
+
+        System.out.print("Introduceți parola studentului: ");
+        String parolaStudent = scanner.next();
+
+        Student student = new Student(idStudent, prenumeStudent, numeStudent, emailStudent, parolaStudent);
         serviciuCatalog.adaugaStudent(student);
 
         System.out.println("Studentul a fost adăugat cu succes.");
@@ -111,6 +119,21 @@ public class TestAplicatie {
 
         serviciuCatalog.stergeStudent(idStudent);
         System.out.println("Student sters cu succes.");
+    }
+
+    // Conexiune baza de date
+    private static void testConexiune() {
+        try {
+            if (DAO.Conexiune.getConnection() != null) {
+                System.out.println("🚀 Conexiunea la baza de date a fost stabilită cu succes.");
+            } else {
+                System.out.println("😱 Conexiunea la baza de date a eșuat.");
+                System.exit(1);
+            }
+        } catch (Exception e) {
+            System.out.println("😱 A apărut o eroare la stabilirea conexiunii la baza de date: " + e.getMessage());
+            System.exit(1);
+        }
     }
 
     // Discipline
