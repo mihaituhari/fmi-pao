@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDAO {
+    private static final String TABLE_NAME = "studenti";
     public List<Student> lista() {
         List<Student> studenti = new ArrayList<>();
-        String sql = "SELECT * FROM studenti";
+        String sql = "SELECT * FROM " + TABLE_NAME;
 
         try (
                 Connection connection = Conexiune.getConnection();
@@ -36,7 +37,7 @@ public class StudentDAO {
         return studenti;
     }
     public void adauga(Student student) {
-        String sql = "INSERT INTO studenti (id, prenume, nume, email, parola) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO " + TABLE_NAME + " (id, prenume, nume, email, parola) VALUES (?, ?, ?, ?, ?)";
 
         try (
                 Connection connection = Conexiune.getConnection();
