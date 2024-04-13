@@ -23,7 +23,6 @@ public class ModelPersoana extends ModelBaza {
     }
 
     // Helpers
-
     @Override
     public String toString() {
         return String.format("%s {id=%d, nume='%s', prenume='%s'}", getClass().getSimpleName(), id, nume, prenume);
