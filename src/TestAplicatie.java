@@ -22,8 +22,11 @@ public class TestAplicatie {
             System.out.println("5. Listare | 6. Adăugare | 7. Modificare | 8. Ștergere");
             System.out.println();
 
-            System.out.println("⚙️ ⎯ ALTE COMENZI ⎯");
+            System.out.println("💻 ⎯ ALTE COMENZI ⎯");
             System.out.println("9. Login student | 0. Ieșire");
+
+            System.out.println();
+            System.out.println("Alege optiune:");
 
             int optiune = scanner.nextInt();
 
