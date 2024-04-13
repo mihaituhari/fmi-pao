@@ -15,7 +15,6 @@ public class Student extends ModelPersoana {
     protected String parola;
 
     // Setters
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -25,7 +24,6 @@ public class Student extends ModelPersoana {
     }
 
     // Getters
-
     public String getEmail() {
         return email;
     }
