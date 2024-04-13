@@ -93,6 +93,8 @@ Implementat persistenta pentru Studenti doar, via [`StudentDAO`](./src/DAO/Stude
 - `ServiciuLogging`
 </details>
 
+### Video demo
+https://github.com/mihaituhari/fmi-pao/assets/12177811/21d022bb-8536-45d3-aba4-3a368526efec
 
 ### Notite
 ```
