@@ -5,7 +5,7 @@ Proiect la disciplina "Programare avansată pe obiecte" – an II ID @ FMI
 1. [Condiții obligatorii de evaluare a proiectelor](#condiții-obligatorii-de-evaluare-a-proiectelor)
 2. [Arhitectura aplicației](#arhitectura-aplicației)
 3. [Tema aleasa](#tema-aleasa)
-4. [Implementarea aplicației în Java](#implementarea-aplicației-în-java)
+4. [Cerinte proiect](#cerinte-proiect)
 5. [Video demo](#video-demo)
 6. [Notite & comenzi](#notite--comenzi)
 
@@ -22,7 +22,7 @@ Proiect la disciplina "Programare avansată pe obiecte" – an II ID @ FMI
 ### Tema aleasa
 Catalog (Student, Disciplină, Profesor, Facultate)
 
-### Implementarea aplicației în Java
+### Cerinte proiect
 <details open>
   <summary>1. Clasele vor avea date membre private / protected și metode publice de acces</summary>
 
