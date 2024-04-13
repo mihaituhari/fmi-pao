@@ -50,7 +50,10 @@ In clasa [`Facultate`](./src/Modele/Facultate.java) se foloseste agregarea pentr
 <details open>
     <summary>6. Se va implementa un serviciu de autentificare</summary>
 
-Implementat [`ServiciuAutentificare`](./src/Servicii/ServiciuAutentificare.java) pentru login. Verifica email & parola din baza de date.
+Implementat [`ServiciuAutentificare`](./src/Servicii/ServiciuAutentificare.java) pentru login.
+Verifica email & parola din baza de date.
+
+![Autentificare](docs/autentificare.png)
 </details>
 
 <details open>
@@ -65,13 +68,16 @@ Clasa [`ServiciuCatalog`](./src/Servicii/ServiciuCatalog.java) expune actiuni ce
    unui meniu de tip text (se poate utiliza și o interfață grafică)</summary>
 
 Implementat prin intermediul [`TestAplicatie`](./src/TestAplicatie.java).
-![img.png](./docs/meniu-aplicatie.png)
+![Meniu aplicatie](./docs/meniu-aplicatie.png)
 
 </details>
 
 <details open>
     <summary>9. Se va asigura persistența datelor utilizând o bază de date relațională și JDBC</summary>
-- StudentDAO pentru CRUD
+
+Implementat persistenta pentru Studenti doar, via [`StudentDAO`](./src/DAO/StudentDAO.java)
+
+![Baza de date MySQL](docs/db-preview.png)
 </details>
 
 <details open>
