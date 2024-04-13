@@ -4,10 +4,6 @@ public class ModelPersoana extends ModelBaza {
     protected String nume;
     protected String prenume;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     // Setters
     public void setNume(String nume) {
         this.nume = nume;
@@ -18,10 +14,6 @@ public class ModelPersoana extends ModelBaza {
     }
 
     // Getters
-    public int getId() {
-        return id;
-    }
-
     public String getNume() {
         return nume;
     }

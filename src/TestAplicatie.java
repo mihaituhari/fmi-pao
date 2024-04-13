@@ -1,5 +1,6 @@
 import Modele.Disciplina;
 import Modele.Student;
+import Servicii.ServiciuAutentificare;
 import Servicii.ServiciuCatalog;
 
 import java.util.Scanner;
@@ -14,14 +15,15 @@ public class TestAplicatie {
         while (true) {
             System.out.println();
             System.out.println("👨‍🎓 ⎯ STUDENTI ⎯");
-            System.out.println("1. Listare | 2. Adăugare | 3. Actualizare | 4. Ștergere");
+            System.out.println("1. Listare | 2. Adăugare | 3. Modificare | 4. Ștergere");
             System.out.println();
 
             System.out.println("📖 ⎯ DISCIPLINE ⎯");
-            System.out.println("5. Listare | 6. Adăugare | 7. Actualizare | 8. Ștergere");
+            System.out.println("5. Listare | 6. Adăugare | 7. Modificare | 8. Ștergere");
             System.out.println();
 
-            System.out.println("0. Ieșire");
+            System.out.println("⚙️ ⎯ ALTE COMENZI ⎯");
+            System.out.println("9. Login student | 0. Ieșire");
 
             int optiune = scanner.nextInt();
 
@@ -34,7 +36,7 @@ public class TestAplicatie {
                     adaugaStudent(serviciuCatalog, scanner);
                     break;
                 case 3:
-                    actualizeazaStudent(serviciuCatalog, scanner);
+                    modificaStudent(serviciuCatalog, scanner);
                     break;
                 case 4:
                     stergeStudent(serviciuCatalog, scanner);
@@ -48,10 +50,15 @@ public class TestAplicatie {
                     adaugaDisciplina(serviciuCatalog, scanner);
                     break;
                 case 7:
-                    actualizeazaDisciplina(serviciuCatalog, scanner);
+                    modificaDisciplina(serviciuCatalog, scanner);
                     break;
                 case 8:
                     stergeDisciplina(serviciuCatalog, scanner);
+                    break;
+
+                // Alte comenzi
+                case 9:
+                    autentificaStudent(scanner);
                     break;
 
                 case 0:
@@ -86,8 +93,8 @@ public class TestAplicatie {
         System.out.println("Studentul a fost adăugat cu succes.");
     }
 
-    private static void actualizeazaStudent(ServiciuCatalog serviciuCatalog, Scanner scanner) {
-        System.out.print("Introduceți ID-ul studentului pe care doriți să-l actualizați: ");
+    private static void modificaStudent(ServiciuCatalog serviciuCatalog, Scanner scanner) {
+        System.out.print("Introduceți ID-ul studentului pe care doriți să-l modificati: ");
         int idStudent = scanner.nextInt();
 
         Student student = serviciuCatalog.gasesteStudent(idStudent);
@@ -102,9 +109,12 @@ public class TestAplicatie {
         System.out.print("Introduceți noul nume al studentului: ");
         String numeStudent = scanner.next();
 
-        serviciuCatalog.actualizeazaStudent(idStudent, numeStudent, prenumeStudent);
+        System.out.print("Introduceți noul email al studentului: ");
+        String emailStudent = scanner.next();
 
-        System.out.println("Detaliile studentului au fost actualizate cu succes.");
+        serviciuCatalog.modificaStudent(idStudent, numeStudent, prenumeStudent, emailStudent);
+
+        System.out.println("Detaliile studentului au fost modificate cu succes.");
     }
 
     private static void stergeStudent(ServiciuCatalog serviciuCatalog, Scanner scanner) {
@@ -119,6 +129,24 @@ public class TestAplicatie {
 
         serviciuCatalog.stergeStudent(idStudent);
         System.out.println("Student sters cu succes.");
+    }
+
+    private static void autentificaStudent(Scanner scanner) {
+        System.out.print("Introduceți emailul studentului: ");
+        String emailStudent = scanner.next();
+
+        System.out.print("Introduceți parola studentului: ");
+        String parolaStudent = scanner.next();
+
+        ServiciuAutentificare serviciuAutentificare = new ServiciuAutentificare();
+        Student student = serviciuAutentificare.autentifica(emailStudent, parolaStudent);
+
+        if (student != null) {
+            System.out.println("Autentificare reușită!");
+            System.out.println("👋 Salut " + student.getPrenume() + " " + student.getNume() + "!");
+        } else {
+            System.out.println("🔐 Autentificare eșuată. Verificați emailul și parola.");
+        }
     }
 
     // Conexiune baza de date
@@ -153,8 +181,8 @@ public class TestAplicatie {
         System.out.println("Disciplina a fost adăugată cu succes.");
     }
 
-    private static void actualizeazaDisciplina(ServiciuCatalog serviciuCatalog, Scanner scanner) {
-        System.out.print("Introduceți ID-ul disciplinei pe care doriți să o actualizați: ");
+    private static void modificaDisciplina(ServiciuCatalog serviciuCatalog, Scanner scanner) {
+        System.out.print("Introduceți ID-ul disciplinei pe care doriți să o modificati: ");
         int idDisciplina = scanner.nextInt();
 
         Disciplina disciplina = serviciuCatalog.gasesteDisciplina(idDisciplina);
@@ -169,9 +197,9 @@ public class TestAplicatie {
         System.out.print("Introduceți noul cod al disciplinei: ");
         String codDisciplina = scanner.next();
 
-        serviciuCatalog.actualizeazaDisciplina(idDisciplina, codDisciplina, numeDisciplina);
+        serviciuCatalog.modificaDisciplina(idDisciplina, codDisciplina, numeDisciplina);
 
-        System.out.println("Detaliile disciplinei au fost actualizate cu succes.");
+        System.out.println("Detaliile disciplinei au fost modificate cu succes.");
     }
 
     private static void stergeDisciplina(ServiciuCatalog serviciuCatalog, Scanner scanner) {

@@ -1,8 +1,14 @@
 package Servicii;
 
+import DAO.StudentDAO;
+import Modele.Student;
+
 public class ServiciuAutentificare {
-    public boolean autentifica(String email, String parola) {
-        // @todo
-        return false;
+    public Student autentifica(String email, String parola) {
+        ServiciuLogging.logAction("autentifica");
+
+        StudentDAO studentDAO = new StudentDAO();
+
+        return studentDAO.autentifica(email, parola);
     }
 }

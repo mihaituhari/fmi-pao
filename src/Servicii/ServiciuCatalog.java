@@ -4,7 +4,6 @@ import DAO.StudentDAO;
 import Modele.Disciplina;
 import Modele.Student;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -51,13 +50,16 @@ public class ServiciuCatalog {
         }
     }
 
-    public void actualizeazaStudent(int id, String numeNou, String prenumeNou) {
-        ServiciuLogging.logAction("actualizeazaStudent");
+    public void modificaStudent(int id, String numeNou, String prenumeNou, String emailNou) {
+        ServiciuLogging.logAction("modificaStudent");
 
         for (Student student : studenti) {
             if (student.getId() == id) {
                 student.setNume(numeNou);
                 student.setPrenume(prenumeNou);
+                student.setEmail(emailNou);
+
+                studentDAO.modifica(student);
                 break;
             }
         }
@@ -66,6 +68,7 @@ public class ServiciuCatalog {
     public void stergeStudent(int id) {
         ServiciuLogging.logAction("stergeStudent");
         studenti.removeIf(student -> student.getId() == id);
+        studentDAO.sterge(id);
     }
 
     // Discipline
@@ -97,8 +100,8 @@ public class ServiciuCatalog {
         }
     }
 
-    public void actualizeazaDisciplina(int id, String codNou, String numeNou) {
-        ServiciuLogging.logAction("actualizeazaDisciplina");
+    public void modificaDisciplina(int id, String codNou, String numeNou) {
+        ServiciuLogging.logAction("modificaDisciplina");
 
         for (Disciplina disciplina : discipline) {
             if (disciplina.getId() == id) {
