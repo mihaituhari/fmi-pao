@@ -1,6 +1,16 @@
 # fmi-pao
 Proiect la disciplina "Programare avansată pe obiecte" – an II ID @ FMI
 
+## Continut
+1. [Condiții obligatorii de evaluare a proiectelor](#condiții-obligatorii-de-evaluare-a-proiectelor)
+2. [Arhitectura aplicației](#arhitectura-aplicației)
+3. [Tema aleasa](#tema-aleasa)
+4. [Implementarea aplicației în Java](#implementarea-aplicației-în-java)
+5. [Video demo](#video-demo)
+6. [Notite & comenzi](#notite--comenzi)
+
+----
+
 ### Condiții obligatorii de evaluare a proiectelor
 - să nu prezinte erori de compilare
 - să respecte cerințele precizate mai jos
@@ -101,7 +111,8 @@ Verifica email & parola din baza de date.
 ### Video demo
 https://github.com/mihaituhari/fmi-pao/assets/12177811/21d022bb-8536-45d3-aba4-3a368526efec
 
-### Notite
+### Notite & comenzi
 ```
+javac TestAplicatie.java
 java -cp .:/Volumes/mihai/dev/fmi/pao/drivers/mysql-connector-j-8.3.0.jar TestAplicatie
 ```
