@@ -91,7 +91,6 @@ public class StudentDAO {
         }
     }
 
-    // In StudentDAO.java
     public Student autentifica(String email, String parola) {
         String sql = "SELECT * FROM " + TABLE_NAME + " WHERE email = ? AND parola = ?";
 
